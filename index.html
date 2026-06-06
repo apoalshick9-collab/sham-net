@@ -167,15 +167,14 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
         import { getFirestore, collection, getDocs, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-        // الكونفيج تبعك صار هون جاهز
+        // الكونفيج الجديد تبعك
         const firebaseConfig = {
-            apiKey: "AIzaSyAg0LGjb6rcMlMZUn15R73_pX2VXBOp0Xc",
-            authDomain: "syriastore1-dcee8.firebaseapp.com",
-            projectId: "syriastore1-dcee8",
-            storageBucket: "syriastore1-dcee8.firebasestorage.app",
-            messagingSenderId: "938774399039",
-            appId: "1:938774399039:web:72d8b51051043b69a6d08a",
-            measurementId: "G-BSKKDDMWVH"
+            apiKey: "AIzaSyAyilyHxkFsCKDmX4i-7zPaiMxKP4c8m74",
+            authDomain: "flutter-ai-playground-c3bb0.firebaseapp.com",
+            projectId: "flutter-ai-playground-c3bb0",
+            storageBucket: "flutter-ai-playground-c3bb0.firebasestorage.app",
+            messagingSenderId: "1055759995979",
+            appId: "1:1055759995979:web:88dff3199c6c50f23769ce"
         };
 
         const app = initializeApp(firebaseConfig);
@@ -212,14 +211,13 @@
                         </div>
                     ;
                     
-                    select.innerHTML += <option value="${pkg.id}">${pkg.name} - ${pkg.speed} Mbps - $${pkg.price}</option>;});
+                    select.innerHTML += <option value="${pkg.id}">${pkg.name} - ${pkg.speed} Mbps - $${pkg.price}</option>;
+                });
             } catch (error) {
                 console.error("Error loading packages: ", error);
                 document.getElementById('pricingContainer').innerHTML = <p class="error-msg">خطأ بتحميل الباقات: ${error.message}<br>تأكد من قواعد Firestore</p>;
             }
-        }
-
-        document.getElementById('orderForm').addEventListener('submit', async (e) => {
+        }document.getElementById('orderForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const msg = document.getElementById('orderMsg');
             msg.textContent = 'جاري إرسال طلبك...';
