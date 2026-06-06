@@ -183,7 +183,7 @@
 
         async function loadPackages() {
             try {
-                const querySnapshot = await getDocs(collection(db, "2X02HIEWJHFXNhoO3wYS"));
+                const querySnapshot = await getDocs(collection(db, "packages"));
                 const container = document.getElementById('pricingContainer');
                 const select = document.getElementById('selectedPackage');
                 container.innerHTML = '';
