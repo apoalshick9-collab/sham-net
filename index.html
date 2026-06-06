@@ -183,7 +183,11 @@
 
         async function loadPackages() {
             try {
-                const querySnapshot = await getDocs(collection(db, "packages"));
+               const querySnapshot = await getDocs(collection(db, "packages"));
+console.log("عدد الباقات اللي لقيتها:", querySnapshot.size); // هاد السطر
+querySnapshot.forEach((doc) => {
+  console.log(doc.id, " => ", doc.data());
+});
                 const container = document.getElementById('pricingContainer');
                 const select = document.getElementById('selectedPackage');
                 container.innerHTML = '';
